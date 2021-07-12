@@ -1,0 +1,472 @@
+###############################################################################
+#
+# IAR ELF Linker V8.50.9.278/W32 for ARM                  12/Jul/2021  21:15:50
+# Copyright 2007-2020 IAR Systems AB.
+#
+#    Output file  =
+#        D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\Exe\DS18B20_LCD.out
+#    Map file     =
+#        D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\List\DS18B20_LCD.map
+#    Command line =
+#        -f C:\Users\Kondr\AppData\Local\Temp\EW84CB.tmp
+#        (D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\Obj\DS18B20.o
+#        D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\Obj\LCD.o
+#        D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\Obj\main.o
+#        D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\Obj\mcu_init.o
+#        D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\Obj\misc.o
+#        D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\Obj\startup_stm32f767xx.o
+#        D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\Obj\stm32f7xx_flash.o
+#        D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\Obj\stm32f7xx_gpio.o
+#        D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\Obj\stm32f7xx_rcc.o
+#        D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\Obj\stm32f7xx_tim.o
+#        D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\Obj\stm32f7xx_usart.o
+#        D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\Obj\system_stm32f7xx.o
+#        D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\Obj\UART.o
+#        --no_out_extension -o
+#        D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\Exe\DS18B20_LCD.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map
+#        D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\List\DS18B20_LCD.map
+#        --config
+#        D:\Project_2020\STM32\Main_projects\DS18B20_LCD\stm32f767xI.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor        = *
+__CPP_Exceptions = Disabled
+__CPP_Language   = C++14
+__SystemLibrary  = DLib
+__dlib_version   = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x20'0000 { ro section .intvec };
+"P1":  place in [from 0x20'0000 to 0x3f'ffff] { ro };
+define block CSTACK with size = 8K, alignment = 8 { };
+"P4":  place in [from 0x2000'0000 to 0x2001'ffff] { block CSTACK };
+define block HEAP with size = 8K, alignment = 8 { };
+"P5":  place in [from 0x2002'0000 to 0x2007'bfff] |
+                [from 0x2007'c000 to 0x2007'ffff] { rw, block HEAP };
+initialize by copy { rw };
+
+No sections matched the following patterns:
+
+  ro section application_specific_ro  in "P2|P7"
+  rw section application_specific_rw  in "P2|P7"
+  section .backup_sram                in "P6"
+  section .textrw                     in "P3"
+
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                       0x1f8
+  .intvec            ro code    0x20'0000   0x1f8  startup_stm32f767xx.o [1]
+                              - 0x20'01f8   0x1f8
+
+"P1":                                      0x2a28
+  .text              ro code    0x20'01f8   0x9c0  stm32f7xx_usart.o [1]
+  .text              ro code    0x20'0bb8   0x106  main.o [1]
+  .text              ro code    0x20'0cbe    0x3a  zero_init3.o [4]
+  .text              ro code    0x20'0cf8   0x610  stm32f7xx_rcc.o [1]
+  .text              ro code    0x20'1308   0x11c  mcu_init.o [1]
+  .text              ro code    0x20'1424   0x198  LCD.o [1]
+  .text              ro code    0x20'15bc   0x1c0  DS18B20.o [1]
+  .text              ro code    0x20'177c   0x114  UART.o [1]
+  .text              ro code    0x20'1890   0x4e4  stm32f7xx_tim.o [1]
+  .text              ro code    0x20'1d74    0xa8  stm32f7xx_flash.o [1]
+  .text              ro code    0x20'1e1c   0x114  system_stm32f7xx.o [1]
+  .text              ro code    0x20'1f30    0xe4  misc.o [1]
+  .text              ro code    0x20'2014   0x68c  stm32f7xx_gpio.o [1]
+  .rodata            const      0x20'26a0    0x6c  stm32f7xx_flash.o [1]
+  .rodata            const      0x20'270c    0x6c  stm32f7xx_gpio.o [1]
+  .rodata            const      0x20'2778    0x6c  stm32f7xx_rcc.o [1]
+  .rodata            const      0x20'27e4    0x6c  stm32f7xx_tim.o [1]
+  .rodata            const      0x20'2850    0x6c  stm32f7xx_usart.o [1]
+  .rodata            const      0x20'28bc    0x60  misc.o [1]
+  .text              ro code    0x20'291c    0x2e  copy_init3.o [4]
+  .rodata            const      0x20'294a     0x1  unwind_debug.o [5]
+  .text              ro code    0x20'294c    0x28  data_init.o [4]
+  .text              ro code    0x20'2974    0x22  fpinit_M.o [3]
+  .iar.init_table    const      0x20'2998    0x24  - Linker created -
+  .text              ro code    0x20'29bc    0x1e  cmain.o [4]
+  .text              ro code    0x20'29da     0x4  low_level_init.o [2]
+  .text              ro code    0x20'29de     0x4  exit.o [2]
+  .text              ro code    0x20'29e4     0xa  cexit.o [4]
+  .text              ro code    0x20'29f0    0x14  exit.o [5]
+  .text              ro code    0x20'2a04    0x1c  cstartup_M.o [4]
+  .rodata            const      0x20'2a20    0x10  stm32f7xx_rcc.o [1]
+  .rodata            const      0x20'2a30    0x10  system_stm32f7xx.o [1]
+  .text              ro code    0x20'2a40    0x10  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a50     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a54     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a58     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a5c     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a60     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a64     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a68     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a6c     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a70     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a74     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a78     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a7c     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a80     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a84     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a88     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a8c     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a90     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a94     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a98     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2a9c     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2aa0     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2aa4     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2aa8     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2aac     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2ab0     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2ab4     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2ab8     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2abc     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2ac0     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2ac4     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2ac8     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2acc     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2ad0     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2ad4     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2ad8     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2adc     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2ae0     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2ae4     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2ae8     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2aec     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2af0     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2af4     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2af8     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2afc     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b00     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b04     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b08     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b0c     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b10     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b14     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b18     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b1c     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b20     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b24     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b28     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b2c     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b30     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b34     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b38     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b3c     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b40     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b44     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b48     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b4c     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b50     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b54     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b58     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b5c     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b60     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b64     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b68     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b6c     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b70     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b74     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b78     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b7c     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b80     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b84     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b88     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b8c     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b90     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b94     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b98     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2b9c     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2ba0     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2ba4     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2ba8     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bac     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bb0     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bb4     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bb8     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bbc     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bc0     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bc4     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bc8     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bcc     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bd0     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bd4     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bd8     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bdc     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2be0     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2be4     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2be8     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bec     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bf0     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bf4     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bf8     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2bfc     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2c00     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2c04     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2c08     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2c0c     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2c10     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2c14     0x4  startup_stm32f767xx.o [1]
+  .text              ro code    0x20'2c18     0x4  startup_stm32f767xx.o [1]
+  .rodata            const      0x20'2c1c     0x0  zero_init3.o [4]
+  .rodata            const      0x20'2c1c     0x0  copy_init3.o [4]
+  Initializer bytes  const      0x20'2c1c     0x4  <for P5 s0>
+                              - 0x20'2c20  0x2a28
+
+"P4":                                      0x2000
+  CSTACK                      0x2000'0000  0x2000  <Block>
+    CSTACK           uninit   0x2000'0000  0x2000  <Block tail>
+                            - 0x2000'2000  0x2000
+
+"P5", part 1 of 2:                            0x4
+  P5 s0                       0x2002'0000     0x4  <Init block>
+    .data            inited   0x2002'0000     0x4  system_stm32f7xx.o [1]
+                            - 0x2002'0004     0x4
+
+"P5", part 2 of 2:                           0x60
+  .bss               zero     0x2002'0004    0x18  UART.o [1]
+  .bss               zero     0x2002'001c    0x14  mcu_init.o [1]
+  .bss               zero     0x2002'0030     0x8  DS18B20.o [1]
+  .bss               zero     0x2002'0038     0x8  DS18B20.o [1]
+  .bss               zero     0x2002'0040     0x8  LCD.o [1]
+  .bss               zero     0x2002'0048     0x8  LCD.o [1]
+  .bss               zero     0x2002'0050     0x8  UART.o [1]
+  .bss               zero     0x2002'0058     0x4  DS18B20.o [1]
+  .bss               zero     0x2002'005c     0x4  mcu_init.o [1]
+  .bss               zero     0x2002'0060     0x4  mcu_init.o [1]
+                            - 0x2002'0064    0x60
+
+Unused ranges:
+
+         From           To       Size
+         ----           --       ----
+    0x20'2c20    0x3f'ffff  0x1f'd3e0
+  0x2000'2000  0x2001'ffff   0x1'e000
+  0x2002'0064  0x2007'bfff   0x5'bf9c
+  0x2007'c000  0x2007'ffff     0x4000
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x60:
+          0x2002'0004  0x60
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x4:
+            0x20'2c1c   0x4
+    1 destination range, total size 0x4:
+          0x2002'0000   0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data
+    ------                 -------  -------  -------
+command line/config:
+    ------------------------------------------------
+    Total:
+
+D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\Obj: [1]
+    DS18B20.o                  448                20
+    LCD.o                      408                16
+    UART.o                     276                32
+    main.o                     262
+    mcu_init.o                 284                28
+    misc.o                     228       96
+    startup_stm32f767xx.o      980
+    stm32f7xx_flash.o          168      108
+    stm32f7xx_gpio.o         1'676      108
+    stm32f7xx_rcc.o          1'552      124
+    stm32f7xx_tim.o          1'252      108
+    stm32f7xx_usart.o        2'496      108
+    system_stm32f7xx.o         276       20        4
+    ------------------------------------------------
+    Total:                  10'306      672      100
+
+dl7M_tln.a: [2]
+    exit.o                       4
+    low_level_init.o             4
+    ------------------------------------------------
+    Total:                       8
+
+m7M_tlv.a: [3]
+    fpinit_M.o                  34
+    ------------------------------------------------
+    Total:                      34
+
+rt7M_tl.a: [4]
+    cexit.o                     10
+    cmain.o                     30
+    copy_init3.o                46
+    cstartup_M.o                28
+    data_init.o                 40
+    zero_init3.o                58
+    ------------------------------------------------
+    Total:                     212
+
+shb_l.a: [5]
+    exit.o                      20
+    unwind_debug.o                        1
+    ------------------------------------------------
+    Total:                      20        1
+
+    Gaps                         5        2
+    Linker created                       36    8'192
+----------------------------------------------------
+    Grand Total:            10'585      711    8'292
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base     0x20'2998          --   Gb  - Linker created -
+.iar.init_table$$Limit    0x20'29bc          --   Gb  - Linker created -
+?main                     0x20'29bd         Code  Gb  cmain.o [4]
+AHBPrescTable             0x20'2a30   0x10  Data  Gb  system_stm32f7xx.o [1]
+APBAHBPrescTable          0x20'2a20   0x10  Data  Lc  stm32f7xx_rcc.o [1]
+CSTACK$$Base            0x2000'0000          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'2000          --   Gb  - Linker created -
+Clear_LCD()               0x20'1501   0x3e  Code  Gb  LCD.o [1]
+FLASH_PrefetchBufferCmd
+                          0x20'1dd3   0x42  Code  Gb  stm32f7xx_flash.o [1]
+FLASH_SetLatency          0x20'1d75   0x5e  Code  Gb  stm32f7xx_flash.o [1]
+GPIOIN()                  0x20'160d   0x22  Code  Gb  DS18B20.o [1]
+GPIOOUT()                 0x20'15eb   0x22  Code  Gb  DS18B20.o [1]
+GPIO_Init                 0x20'2015  0x1b0  Code  Gb  stm32f7xx_gpio.o [1]
+GPIO_PinAFConfig          0x20'24a7  0x1ca  Code  Gb  stm32f7xx_gpio.o [1]
+GPIO_ReadInputDataBit     0x20'21c5  0x11c  Code  Gb  stm32f7xx_gpio.o [1]
+GPIO_ResetBits            0x20'234d   0x6e  Code  Gb  stm32f7xx_gpio.o [1]
+GPIO_SetBits              0x20'22e1   0x6c  Code  Gb  stm32f7xx_gpio.o [1]
+GPIO_Struct_B           0x2002'0030    0x8  Data  Gb  DS18B20.o [1]
+GPIO_Struct_B11         0x2002'0038    0x8  Data  Gb  DS18B20.o [1]
+GPIO_Struct_C           0x2002'0040    0x8  Data  Gb  LCD.o [1]
+GPIO_Struct_D           0x2002'0048    0x8  Data  Gb  LCD.o [1]
+GPIO_ToggleBits           0x20'2449   0x5e  Code  Gb  stm32f7xx_gpio.o [1]
+GPIO_UART_Structure     0x2002'0050    0x8  Data  Gb  UART.o [1]
+GPIO_Write                0x20'23e9   0x5a  Code  Gb  stm32f7xx_gpio.o [1]
+Init_Clock()              0x20'1331   0x6c  Code  Gb  mcu_init.o [1]
+Init_DS18B20()            0x20'162f   0x50  Code  Gb  DS18B20.o [1]
+Init_GPIO_DS18B20()       0x20'15bd   0x2e  Code  Gb  DS18B20.o [1]
+Init_GPIO_LCD()           0x20'148f   0x72  Code  Gb  LCD.o [1]
+Init_LCD()                0x20'1425   0x6a  Code  Gb  LCD.o [1]
+Init_Timer()              0x20'139d   0x56  Code  Gb  mcu_init.o [1]
+Init_UART()               0x20'17bf   0x8e  Code  Gb  UART.o [1]
+NVIC_Init                 0x20'1f65   0x98  Code  Gb  misc.o [1]
+NVIC_InitStructure      0x2002'005c    0x4  Data  Gb  mcu_init.o [1]
+NVIC_PriorityGroupConfig
+                          0x20'1f31   0x34  Code  Gb  misc.o [1]
+RCC_AHB1PeriphClockCmd    0x20'115d   0x5a  Code  Gb  stm32f7xx_rcc.o [1]
+RCC_APB1PeriphClockCmd    0x20'11c1   0x56  Code  Gb  stm32f7xx_rcc.o [1]
+RCC_DeInit                0x20'0cf9   0x7a  Code  Gb  stm32f7xx_rcc.o [1]
+RCC_GetClocksFreq         0x20'1033  0x100  Code  Gb  stm32f7xx_rcc.o [1]
+RCC_GetFlagStatus         0x20'122d   0xbe  Code  Gb  stm32f7xx_rcc.o [1]
+RCC_GetSYSCLKSource       0x20'0f65    0xc  Code  Gb  stm32f7xx_rcc.o [1]
+RCC_HCLKConfig            0x20'0f71   0x46  Code  Gb  stm32f7xx_rcc.o [1]
+RCC_HSEConfig             0x20'0d73   0x32  Code  Gb  stm32f7xx_rcc.o [1]
+RCC_HSICmd                0x20'0de3   0x44  Code  Gb  stm32f7xx_rcc.o [1]
+RCC_PCLK1Config           0x20'0fb7   0x3e  Code  Gb  stm32f7xx_rcc.o [1]
+RCC_PCLK2Config           0x20'0ff5   0x3e  Code  Gb  stm32f7xx_rcc.o [1]
+RCC_PLLCmd                0x20'0ef3   0x44  Code  Gb  stm32f7xx_rcc.o [1]
+RCC_PLLConfig             0x20'0e27   0xcc  Code  Gb  stm32f7xx_rcc.o [1]
+RCC_SYSCLKConfig          0x20'0f37   0x2e  Code  Gb  stm32f7xx_rcc.o [1]
+RCC_WaitForHSEStartUp     0x20'0da5   0x3e  Code  Gb  stm32f7xx_rcc.o [1]
+Region$$Table$$Base       0x20'2998          --   Gb  - Linker created -
+Region$$Table$$Limit      0x20'29bc          --   Gb  - Linker created -
+Send_symbol_LCD(char)     0x20'153f   0x6c  Code  Gb  LCD.o [1]
+SystemCoreClock         0x2002'0000    0x4  Data  Gb  system_stm32f7xx.o [1]
+SystemCoreClockUpdate     0x20'1e5d   0xa2  Code  Gb  system_stm32f7xx.o [1]
+SystemInit                0x20'1e1d   0x40  Code  Gb  system_stm32f7xx.o [1]
+TIM3_IRQHandler           0x20'13f3   0x22  Code  Gb  mcu_init.o [1]
+TIM_ClearITPendingBit     0x20'1cb7   0x84  Code  Gb  stm32f7xx_tim.o [1]
+TIM_Cmd                   0x20'1a15   0xb8  Code  Gb  stm32f7xx_tim.o [1]
+TIM_GetITStatus           0x20'1be9   0xce  Code  Gb  stm32f7xx_tim.o [1]
+TIM_ITConfig              0x20'1b05   0xb8  Code  Gb  stm32f7xx_tim.o [1]
+TIM_TimeBaseInit          0x20'1891  0x134  Code  Gb  stm32f7xx_tim.o [1]
+TIM_TimeBaseStructInit    0x20'19c5   0x18  Code  Gb  stm32f7xx_tim.o [1]
+Timer_Struct            0x2002'001c   0x14  Data  Gb  mcu_init.o [1]
+UART5_IRQHandler          0x20'184d   0x22  Code  Gb  UART.o [1]
+UART_Structure          0x2002'0004   0x18  Data  Gb  UART.o [1]
+USART_ClearITPendingBit
+                          0x20'0abd   0xa2  Code  Gb  stm32f7xx_usart.o [1]
+USART_Cmd                 0x20'0703   0x78  Code  Gb  stm32f7xx_usart.o [1]
+USART_GetClockSource      0x20'01f9  0x304  Code  Gb  stm32f7xx_usart.o [1]
+USART_GetITStatus         0x20'09c5   0xf8  Code  Gb  stm32f7xx_usart.o [1]
+USART_ITConfig            0x20'088d  0x128  Code  Gb  stm32f7xx_usart.o [1]
+USART_Init                0x20'04fd  0x206  Code  Gb  stm32f7xx_usart.o [1]
+USART_ReceiveData         0x20'0819   0x4a  Code  Gb  stm32f7xx_usart.o [1]
+USART_SendData            0x20'07ad   0x6c  Code  Gb  stm32f7xx_usart.o [1]
+[local to UART_cpp]::NVIC_EnableIRQ(IRQn_Type)
+                          0x20'177d   0x16  Code  Lc  UART.o [1]
+[local to UART_cpp]::NVIC_SetPriority(IRQn_Type, unsigned int)
+                          0x20'1793   0x2c  Code  Lc  UART.o [1]
+__cmain                   0x20'29bd         Code  Gb  cmain.o [4]
+__exit                    0x20'29f1   0x14  Code  Gb  exit.o [5]
+__iar_copy_init3          0x20'291d   0x2e  Code  Gb  copy_init3.o [4]
+__iar_data_init3          0x20'294d   0x28  Code  Gb  data_init.o [4]
+__iar_debug_exceptions    0x20'294a    0x1  Data  Gb  unwind_debug.o [5]
+__iar_init_vfp            0x20'2975         Code  Gb  fpinit_M.o [3]
+__iar_program_start       0x20'2a05         Code  Gb  cstartup_M.o [4]
+__iar_zero_init3          0x20'0cbf   0x3a  Code  Gb  zero_init3.o [4]
+__low_level_init          0x20'29db    0x4  Code  Gb  low_level_init.o [2]
+__vector_table            0x20'0000         Data  Gb  startup_stm32f767xx.o [1]
+_call_main                0x20'29c9         Code  Gb  cmain.o [4]
+_exit                     0x20'29e5         Code  Gb  cexit.o [4]
+_main                     0x20'29d3         Code  Gb  cmain.o [4]
+assert_failed             0x20'0cbd    0x2  Code  Gb  main.o [1]
+bit                     0x2002'0058    0x4  Data  Gb  DS18B20.o [1]
+count                   0x2002'0060    0x4  Data  Gb  mcu_init.o [1]
+delay(int)                0x20'1309   0x28  Code  Gb  mcu_init.o [1]
+exit                      0x20'29df    0x4  Code  Gb  exit.o [2]
+getTempr()                0x20'171b   0x4c  Code  Gb  DS18B20.o [1]
+main                      0x20'0bb9   0xf2  Code  Gb  main.o [1]
+one_wire_read_bit()       0x20'16bd   0x3c  Code  Gb  DS18B20.o [1]
+one_wire_write_bit(unsigned char)
+                          0x20'167f   0x3e  Code  Gb  DS18B20.o [1]
+one_wire_write_byte(unsigned char)
+                          0x20'16f9   0x22  Code  Gb  DS18B20.o [1]
+
+
+[1] = D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Debug\Obj
+[2] = dl7M_tln.a
+[3] = m7M_tlv.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  10'585 bytes of readonly  code memory
+     711 bytes of readonly  data memory
+   8'292 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

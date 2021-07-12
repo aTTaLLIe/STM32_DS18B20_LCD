@@ -1,0 +1,16 @@
+system_stm32f7xx.pbi: \
+  D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Libraries\system_stm32f7xx.c \
+  D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Libraries/stm32f7xx.h \
+  D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Libraries/stm32f767xx.h \
+  D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Libraries/core_cm7.h \
+  D:\Program\IAR\arm\inc\c\stdint.h D:\Program\IAR\arm\inc\c\ycheck.h \
+  D:\Program\IAR\arm\inc\c\yvals.h \
+  D:\Program\IAR\arm\inc\c\DLib_Defaults.h \
+  D:\Program\IAR\arm\inc\c\DLib_Config_Normal.h \
+  D:\Program\IAR\arm\inc\c\DLib_Product.h \
+  D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Libraries/core_cmInstr.h \
+  D:\Program\IAR\arm\inc\c\cmsis_iar.h \
+  D:\Program\IAR\arm\inc\c/iccarm_builtin.h \
+  D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Libraries/core_cmFunc.h \
+  D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Libraries/core_cmSimd.h \
+  D:\Project_2020\STM32\Main_projects\DS18B20_LCD\Libraries/system_stm32f7xx.h
